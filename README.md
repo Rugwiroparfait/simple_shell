@@ -1,8 +1,12 @@
 # 0x16. C - Simple Shell
 
-This project involves creating a simple shell that mimics the basic functionality of the Unix shell (`sh`). The shell should be able to handle both interactive and non-interactive modes.
+## Project Overview
+
+This project involves the creation of a simple shell, referred to as `hsh`. The shell supports both interactive and non-interactive modes and is expected to replicate the behavior of the standard Unix shell (`/bin/sh`). The implementation should adhere to specific guidelines and constraints outlined below.
 
 ## List of Allowed Functions and System Calls
+
+The following functions and system calls are allowed for use in this project:
 
 - `access` (man 2 access)
 - `chdir` (man 2 chdir)
@@ -26,9 +30,9 @@ This project involves creating a simple shell that mimics the basic functionalit
 - `read` (man 2 read)
 - `readdir` (man 3 readdir)
 - `signal` (man 2 signal)
-- `stat` (`__xstat`) (man 2 stat)
-- `lstat` (`__lxstat`) (man 2 lstat)
-- `fstat` (`__fxstat`) (man 2 fstat)
+- `stat` (__xstat) (man 2 stat)
+- `lstat` (__lxstat) (man 2 lstat)
+- `fstat` (__fxstat) (man 2 fstat)
 - `strtok` (man 3 strtok)
 - `wait` (man 2 wait)
 - `waitpid` (man 2 waitpid)
@@ -44,59 +48,40 @@ The shell will be compiled using the following command:
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
 
-All files should end with a newline character.
-
-## Coding Style
-
-- Your code should adhere to the Betty style. It will be checked using `betty-style.pl` and `betty-doc.pl`.
-- No more than 5 functions per file.
-- All header files should be include guarded.
-
-## Memory Management
-
-- Your shell should not have any memory leaks.
-
-## System Calls Usage
-
-- Use system calls only when necessary.
+All files should end with a new line, and the code must follow the Betty style guidelines. The shell should not have any memory leaks, and each file should contain no more than 5 functions.
 
 ## Output
 
-The output of your program must match that of `/bin/sh` for both regular output and error messages. The name of the program should be equivalent to `argv[0]` when printing errors.
+The shell's output and error messages should match those of `/bin/sh`. When printing errors, the program's name must be equivalent to `argv[0]`.
 
-### Example of error with `/bin/sh`:
+Example of error with `/bin/sh`:
 
 ```bash
 $ echo "qwerty" | /bin/sh
 /bin/sh: 1: qwerty: not found
-$ echo "qwerty" | /bin/../bin/sh
-/bin/../bin/sh: 1: qwerty: not found
 ```
 
-### Same error with your program `hsh`:
+Same error with `hsh`:
 
 ```bash
 $ echo "qwerty" | ./hsh
 ./hsh: 1: qwerty: not found
-$ echo "qwerty" | ./././hsh
-./././hsh: 1: qwerty: not found
 ```
 
 ## Testing
 
-Your shell should work in both interactive and non-interactive modes.
-
-### Interactive Mode:
+The shell should work in both interactive and non-interactive modes. Interactive mode:
 
 ```bash
 $ ./hsh
 ($) /bin/ls
 hsh main.c shell.c
+($)
 ($) exit
 $
 ```
 
-### Non-Interactive Mode:
+Non-interactive mode:
 
 ```bash
 $ echo "/bin/ls" | ./hsh
@@ -112,36 +97,34 @@ hsh main.c shell.c test_ls_2
 $
 ```
 
-## Checks
+## Project Files
 
-- The project must have different files, and there must be `main.h`.
+The project must include the following files:
 
+- `_atoi.c`
+- `builtin.c`
+- `builtin1.c`
+- `environ.c`
+- `errors.c`
+- `error1.c`
+- `exits.c`
+- `getLine.c`
+- `getenv.c`
+- `getinfo.c`
+- `history.c`
+- `lists.c`
+- `main.c`
+- `memory.c`
+- `parser.c`
+- `realloc.c`
+- `shell.h`
+- `shell_loop.c`
+- `string.c`
+- `string1.c`
+- `tokenizer.c`
+- `vars.c`
 
+## Additional Notes
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- All header files should be include guarded.
+- Use system calls only when necessary.
