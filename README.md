@@ -12,7 +12,7 @@ This project is an implementation of a simple shell in C, providing basic comman
 
 1. **Clone the Repository:**
    ```
-   git clone https://github.com/your-username/simple-shell.git
+   git clone https://github.com/Rugwiroparfait /simple-shell.git
    ```
 
 2. **Compile the Code:**
