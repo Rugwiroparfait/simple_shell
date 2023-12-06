@@ -9,7 +9,7 @@
  * Return : summation when success , 0 when failed;
  */
 
-int sum(int num1,int num2)
+int sum(int num1, int num2)
 {
 	return (num1 + num2);
 }
@@ -18,6 +18,6 @@ int sum(int num1,int num2)
 
 int main(void)
 {
-	printf("summation is %d\n",sum(2,5));
+	printf("summation is %d\n", sum(2 ,5));
 	return (0);
 }
