@@ -1,15 +1,30 @@
-
-
 #include "shell.h"
-#include <stdio.h>
+/**
+ * main - Entry Point.
+ *
+ * Return: 0.
+ */
+int main(void)
+{
+	char *command = NULL;
+	size_t n = 0;
+	ssize_t read;
 
-int main(void) {
-    char *command;
+	while (1)
+	{
+		print_prompt("#cisfun$");
+		read = getline(&command, &n, stdin);
+		if (read == -1)
+		{
+			free(command);
+			exit(EXIT_FAILURE);
+		}
+		execute_command(command);
+	}
 
-    display_prompt();
-    command = _getline();
-    execute_command(parse_command(command));
-
-    return 0;
+		free(command);
+		return (0);
 }
+
+
 

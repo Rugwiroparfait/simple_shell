@@ -1,12 +1,11 @@
-/* prompt.c */
-
 #include "shell.h"
-#include <stdio.h>
-
 /**
- * display_prompt - Display a simple shell prompt
+ * print_prompt - prints prompt to the stdout.
+ *@prompt: pinter to char.
+ *
+ * Return: void.
  */
-void display_prompt(void) {
-    printf("$ "); /* Simple prompt, change as needed */
+void print_prompt(char *prompt)
+{
+	write(1, prompt, sizeof(prompt));
 }
-
